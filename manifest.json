@@ -1,0 +1,22 @@
+{
+  "evidenceKey": "table-catalog-disable-34",
+  "issue": "https://github.com/rustfs/backlog/issues/2729",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "capture": "Actual Next.js Console runtime with intercepted S3/catalog responses; not a live RustFS integration",
+  "scenario": "Enabled empty table catalog with disable-supported capability",
+  "before": "before.png",
+  "after": "after.png",
+  "behaviorChecks": [
+    "capability absent and false hide action",
+    "capability true exposes action",
+    "missing SetTableBucket permission disables action",
+    "cancel issues no DELETE",
+    "409 preserves enabled state and permits retry",
+    "successful disable updates state",
+    "re-enable updates state",
+    "mobile and dark confirmation"
+  ]
+}
