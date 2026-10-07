@@ -1,0 +1,25 @@
+{
+  "evidenceKey": "object-pagination-33",
+  "issue": "https://github.com/rustfs/backlog/issues/2730",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "capture": "Actual Next.js Console runtime with intercepted S3 responses; not a live RustFS integration",
+  "scenario": "Two empty pages with continuation tokens, followed by visible.parquet",
+  "before": "before.png",
+  "after": "after.png",
+  "behaviorChecks": [
+    "terminal empty page",
+    "append failure pauses automatic requests",
+    "keyboard retry",
+    "stale prefix response ignored",
+    "manual pagination without IntersectionObserver",
+    "mobile and dark theme"
+  ],
+  "scripts": [
+    "/tmp/rustfs-console-ui-test.mjs",
+    "/tmp/rustfs-console-ui-race.mjs",
+    "/tmp/rustfs-console-ui-partial.mjs"
+  ]
+}
